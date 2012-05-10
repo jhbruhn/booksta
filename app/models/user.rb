@@ -10,6 +10,9 @@ class User < ActiveRecord::Base
   has_many :books
   has_many :chapters
   
+  include Gravtastic
+  gravtastic
+  
   def to_s
     username
   end

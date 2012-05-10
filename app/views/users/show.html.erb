@@ -5,10 +5,25 @@
 	<h1><%= @user.username %></h1>
 
 </div>
-<p><%= @user.about %></p>
-<h2>Books:</h2>
-<ul>
-	<% @books.each do |book| %>
-		<li><h3><%= link_to book.title, book %></h3></li>
-	<% end %>
-</ul>
+<div class="row">
+	<div class="span2">
+		<div class="thumbnail">
+			<%= image_tag @user.gravatar_url(:size => 150) %>
+		</div>
+	</div>
+	<div class="span10">
+		<div class="row">
+			<div class="span12">
+				<p><%= raw @user.about %></p>
+			</div>
+			<div class="span12">
+				<h2>Books:</h2>
+				<ul>
+					<% @books.each do |book| %>
+						<li><h3><%= link_to book.title, book %></h3></li>
+					<% end %>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
