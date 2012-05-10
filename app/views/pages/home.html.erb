@@ -6,7 +6,7 @@
 </div>
 <div class="row">
 	<div class="span6">
-		<h2>Die neusten Books:</h2>
+		<h2>The newest Books:</h2>
 		<ul>
 			<% @newBooks.each do |book|%>
 			<li><h2><%= link_to book.title, book %></h2></li>
@@ -14,7 +14,7 @@
 		</ul>
 	</div>
 	<div class="span6">
-		<h2>Die neusten User:</h2>
+		<h2>The newest Users:</h2>
 		<ul>
 			<% @newUsers.each do |user|%>
 			<li><h2><%= link_to user.username, user %></h2></li>
