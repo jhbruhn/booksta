@@ -1,0 +1,35 @@
+<%- model_class = @book.class -%>
+
+<div class="page-header">
+	<% if current_user == @book.user %>
+		<div class="pull-right">
+			<%= link_to "Destroy", book_path(@book), :method => 'delete', :confirm => "Do you really want to delete this book?", :class => 'btn btn-danger' %>
+			<%= link_to "Edit", edit_book_path(@book), :class => 'btn ' %>
+			<%= link_to "Add new Chapter", new_book_chapter_path(@book), :class=>"btn btn-primary" %>
+		</div>
+	<%end%>
+	<h1>
+		<%= @book.title %>
+		<small>
+			<em>
+				 von <strong><%= link_to @book.user, @book.user %></strong>
+			</em>
+		</small>
+	</h1>
+
+		<%= @book.subtitle %>
+		
+
+	  
+</div>
+
+<% if @book.chapters.any? %>
+    <h3>Chapters (<%= @book.chapters.count %>)</h3>
+    <ol>
+        <% @book.chapters.each do |chapter| %>
+	        <li>
+				<%= link_to chapter.title, [@book, chapter] %>
+			</li>
+	    <% end %>
+	</ol>
+<% end %>

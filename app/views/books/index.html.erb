@@ -1,0 +1,21 @@
+<%- model_class = Book.new.class -%>
+<div class="page-header">
+	<h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:title) %></th>
+      <th>Author</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @books.each do |book| %>
+      <tr>
+        <td><%= link_to book.title, book_path(book) %></td>
+        <td><%= link_to book.user,  book.user %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

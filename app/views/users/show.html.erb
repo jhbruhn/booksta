@@ -1,0 +1,14 @@
+<div class="page-header">
+	<div class="pull-right">
+		<%= link_to "Edit Profile", edit_user_path(@user), :class => "btn btn-primary" unless @user != current_user%>
+	</div>
+	<h1><%= @user.username %></h1>
+
+</div>
+<p><%= @user.about %></p>
+<h2>Books:</h2>
+<ul>
+	<% @books.each do |book| %>
+		<li><h3><%= link_to book.title, book %></h3></li>
+	<% end %>
+</ul>
