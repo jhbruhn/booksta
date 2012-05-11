@@ -16,4 +16,8 @@ class User < ActiveRecord::Base
   def to_s
     username
   end
+  
+  def to_param
+    "#{id}-#{username.downcase}".gsub(/[^a-zA-Z0-9]+/, '-').gsub(/-{2,}/, '-').gsub(/^-|-$/, '')
+  end
 end

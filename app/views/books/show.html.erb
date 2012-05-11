@@ -1,13 +1,16 @@
 <%- model_class = @book.class -%>
 
 <div class="page-header">
-	<% if current_user == @book.user %>
-		<div class="pull-right">
-			<%= link_to "Destroy", book_path(@book), :method => 'delete', :confirm => "Do you really want to delete this book?", :class => 'btn btn-danger' %>
-			<%= link_to "Edit", edit_book_path(@book), :class => 'btn ' %>
-			<%= link_to "Add new Chapter", new_book_chapter_path(@book), :class=>"btn btn-primary" %>
-		</div>
-	<%end%>
+	<div class="pull-right">
+		<%= link_to raw ("<i class='icon-download-alt'></i> ")+"Download PDF-Version", book_path(@book, :format => :pdf), :class => 'btn ' %>
+		<% if current_user == @book.user %>
+			<%= link_to raw ("<i class='icon-plus'></i> ")+"Add new Chapter", new_book_chapter_path(@book), :class=>"btn btn-primary" %>
+			
+			<%= link_to raw ("<i class='icon-pencil'></i> ")+"Edit", edit_book_path(@book), :class => 'btn ' %>
+			<%= link_to raw ("<i class='icon-trash'></i> ")+"Destroy", book_path(@book), :method => 'delete', :confirm => "Do you really want to delete this book?", :class => 'btn btn-danger' %>
+			
+		<%end%>
+	</div>
 	<h1>
 		<%= @book.title %>
 		<small>

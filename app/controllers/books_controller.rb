@@ -21,6 +21,12 @@ class BooksController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @book }
+      format.pdf do
+        pdf = BookPdf.new(@book, view_context)
+        send_data pdf.render, :filename => "book_#{@book.title}.pdf",
+                              :type => "application/pdf",
+                              :disposition => "inline"
+      end
     end
   end
 

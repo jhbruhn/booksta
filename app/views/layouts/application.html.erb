@@ -31,6 +31,7 @@
 							<a href="#"
 						       class="dropdown-toggle"
 						       data-toggle="dropdown">
+								<i class="icon-user icon-white"></i>
 						          Account
 						          <b class="caret"></b>
 						    </a>
@@ -42,9 +43,7 @@
 								<% else %>
 									<li><%= link_to current_user.username, current_user %></li>
 									<li class="divider"></li>
-									<li><%= link_to "New Book",
-									            new_book_path
-									             %>
+									<li><%= link_to "New Book", new_book_path %>
 									</li>
 									<li><%= link_to "Log out", destroy_user_session_path, :method => :delete%></li>
 								<% end %>
@@ -74,12 +73,7 @@
 			<p>
 				Made by bigteddy, 2012
 			</p>
-			<p>
-				<iframe src="http://markdotto.github.com/github-buttons/github-btn.html?user=bigteddy97&repo=booksta&type=watch&count=true"
-				  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
-				<iframe src="http://markdotto.github.com/github-buttons/github-btn.html?user=bigteddy97&repo=booksta&type=fork&count=true"
-				  allowtransparency="true" frameborder="0" scrolling="0" width="95px" height="20px"></iframe>
-			</p>
+
 			<p>
 				<%= link_to "What's this?", pages_wthit_path %>&nbsp;|&nbsp;<%= link_to "Who made this?", pages_who_path %>
 			</p>
