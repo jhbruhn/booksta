@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require tinymce
+//= require jquery.purr
+//= require best_in_place
 //= require_tree .

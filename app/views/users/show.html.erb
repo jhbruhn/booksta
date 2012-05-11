@@ -1,8 +1,10 @@
 <div class="page-header">
 	<div class="pull-right">
-		<%= link_to "Edit Profile", edit_user_path(@user), :class => "btn btn-primary" unless @user != current_user%>
+		<div class="alert alert-info"><strong>Hint:</strong> Edit your about by clicking on it!</div>
 	</div>
-	<h1><%= @user.username %></h1>
+	<h1>
+		<%= @user.username %>
+	</h1>
 
 </div>
 <div class="row">
@@ -14,7 +16,7 @@
 	<div class="span10">
 		<div class="row">
 			<div class="span12">
-				<p><%= raw @user.about %></p>
+				<p><%= best_in_place_if current_user == @user, @user, :about, :type => :textarea %></p>
 			</div>
 			<div class="span12">
 				<h2>Books:</h2>

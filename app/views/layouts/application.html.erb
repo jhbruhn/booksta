@@ -57,10 +57,10 @@
 	<div class="container">
   
 		<% if notice %>
-		<p class="alert alert-success"><%= notice %></p>
+		<p class="alert alert-success"><%= notice %><a class="close" href="#" data-dismiss="alert">&times;</a></p>
 		<%end%>
 		<% if alert %>
- 		<p class="alert alert-error"><%= alert %></p>
+ 		<p class="alert alert-error"><%= alert %><a class="close" href="#" data-dismiss="alert">&times;</a></p>
 		<%end%>
 		
 		<div class="content">
