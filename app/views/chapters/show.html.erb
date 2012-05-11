@@ -3,12 +3,12 @@
 	<% if current_user == @book.user %>
 		<div class="pull-right">
 			<%= link_to raw ("<i class='icon-pencil'></i> ")+"Edit", edit_book_chapter_path(@book), :class => 'btn' %>
-			<%= link_to raw ("<i class='icon-trash'></i> ")+"Destroy", book_chapter_path(@chapter), :method => 'delete', :confirm => "Do you really want to delete this chapter?",
+			<%= link_to raw ("<i class='icon-trash'></i> ")+"Destroy", book_chapter_path([@book]), :method => 'delete', :confirm => "Do you really want to delete this chapter?",
 			              :class => 'btn btn-danger' %>
 		</div>
 	<% end %>
 	<h1>
-		<%= @chapter.book.title %>
+		<%= link_to @chapter.book.title, @chapter.book %>
 		<small>
 			<em>
 				 von <strong><%= link_to @chapter.book.user, @chapter.book.user %></strong>
@@ -25,7 +25,7 @@
   		<p><%= raw @chapter.content %></p>
 	</div>
 	<div class="span3">
-		<h3>Chapters</h3>
+		<h3>Chapters:</h3>
     	<ol>
         	<% @chapter.book.chapters.each do |chapter| %>
 	        	<li>

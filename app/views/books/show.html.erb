@@ -22,7 +22,7 @@
 </div>
 
 <% if @book.chapters.any? %>
-    <h3>Chapters (<%= @book.chapters.count %>)</h3>
+    <h3>Chapters:</h3>
     <ol>
         <% @book.chapters.each do |chapter| %>
 	        <li>

@@ -68,12 +68,17 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
 
     respond_to do |format|
-      if @book.update_attributes(params[:book])
-        format.html { redirect_to @book, :notice => 'Book was successfully updated.' }
-        format.json { head :no_content }
+      if @book.user == current_user
+        if @book.update_attributes(params[:book])
+          format.html { redirect_to @book, :notice => 'Book was successfully updated.' }
+          format.json { head :no_content }
+        else
+          format.html { render :action => "edit" }
+          format.json { render :json => @book.errors, :status => :unprocessable_entity }
+        end
       else
-        format.html { render :action => "edit" }
-        format.json { render :json => @book.errors, :status => :unprocessable_entity }
+        format.html { render :action => "edit" , :alert => "U HAVE NO RIGHTS!" }
+        format.json { render :json => @chapter, :status => :unprocessable_entity }
       end
     end
   end
@@ -82,7 +87,9 @@ class BooksController < ApplicationController
   # DELETE /books/1.json
   def destroy
     @book = Book.find(params[:id])
-    @book.destroy
+    if @book.user == current_user
+      @book.destroy
+    end
 
     respond_to do |format|
       format.html { redirect_to books_url }

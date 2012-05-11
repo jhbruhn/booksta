@@ -44,7 +44,7 @@ class ChaptersController < ApplicationController
             format.json { render :json => @chapter.errors, :status => :unprocessable_entity }
           end
        else
-         format.html { render :action => "new" , :notice => "U HAVE NO RIGHTS!" }
+         format.html { render :action => "new" , :alert => "U HAVE NO RIGHTS!" }
          format.json { render :json => @book, :status => :unprocessable_entity }
        end
      end
@@ -65,7 +65,7 @@ class ChaptersController < ApplicationController
           format.json { render :json => @chapter.errors, :status => :unprocessable_entity }
         end
       else
-        format.html { render :action => "edit" , :notice => "U HAVE NO RIGHTS!" }
+        format.html { render :action => "edit" , :alert => "U HAVE NO RIGHTS!" }
         format.json { render :json => @chapter, :status => :unprocessable_entity }
       end
     end
@@ -75,18 +75,18 @@ class ChaptersController < ApplicationController
   # DELETE /chapters/1.json
   def destroy
     @chapter = Chapter.find(params[:id])
-    @chapter.destroy
-
+    if @chapter.book.user == current_user
+      @chapter.destroy
+    end
+    
     respond_to do |format|
-       if @book.user == current_user
-         format.html { redirect_to @book }
-        format.json { head :no_content }
-      end
+      format.html { redirect_to @book }
+      format.json { head :no_content }
     end
   end
   
   private
     def find_book
-      @book = Book.find(params[:book_id])
+      @book = Book.find(params[:book_id].to_i)
     end
 end
