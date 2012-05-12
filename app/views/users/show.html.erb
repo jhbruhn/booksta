@@ -1,7 +1,9 @@
 <div class="page-header">
+	<% if current_user == @user %>
 	<div class="pull-right">
 		<div class="alert alert-info"><strong>Hint:</strong> Edit your about by clicking on it!</div>
 	</div>
+	<% end %>
 	<h1>
 		<%= @user.username %>
 	</h1>
