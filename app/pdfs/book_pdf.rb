@@ -39,7 +39,7 @@ class BookPdf < Prawn::Document
       start_new_page
       header(chapter.title)
       span(450, :position => :center) do
-        text strip_tags markdown.render chapter.content
+        text strip_tags coder.decode markdown.render chapter.content
       end
     end
     
