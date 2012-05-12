@@ -8,21 +8,20 @@
 		</div>
 	<% end %>
 	<h1>
-		<%= link_to @chapter.book.title, @chapter.book %>
+		<%= @chapter.title %> 
 		<small>
+			aus <%= link_to @chapter.book.title, @chapter.book %>
 			<em>
 				 von <strong><%= link_to @chapter.book.user, @chapter.book.user %></strong>
 			</em>
 		</small>
 	</h1>
-
-	<%= @book.subtitle %>
 </div>
 <div class="row">
 	<div class="span9">
-  		<h3><%= @chapter.title %>
-		</h3>
-  		<p><%= raw @chapter.content %></p>
+  		<div>
+  			<%= markdown @chapter.content %>
+  		</div>
 	</div>
 	<div class="span3">
 		<h3>Chapters:</h3>

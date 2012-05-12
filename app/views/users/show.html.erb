@@ -1,7 +1,7 @@
 <div class="page-header">
 	<% if current_user == @user %>
 	<div class="pull-right">
-		<div class="alert alert-info"><strong>Hint:</strong> Edit your about by clicking on it!</div>
+		<%= link_to raw ("<i class='icon-pencil'></i> ")+"Edit Profile", edit_user_path, :class => "btn" %>
 	</div>
 	<% end %>
 	<h1>
@@ -18,7 +18,7 @@
 	<div class="span10">
 		<div class="row">
 			<div class="span12">
-				<p><%= best_in_place_if current_user == @user, @user, :about, :type => :textarea %></p>
+				<p><%= markdown @user.about %></p>
 			</div>
 			<div class="span12">
 				<h2>Books:</h2>

@@ -33,11 +33,13 @@ class BookPdf < Prawn::Document
   
   def chapters
     coder = HTMLEntities.new
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, :autolink => true, :space_after_headers => true)
+      
     @book.chapters.each do |chapter|
       start_new_page
       header(chapter.title)
       span(450, :position => :center) do
-        text strip_tags coder.decode chapter.content
+        text strip_tags markdown.render chapter.content
       end
     end
     

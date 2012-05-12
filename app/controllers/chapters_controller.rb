@@ -89,4 +89,5 @@ class ChaptersController < ApplicationController
     def find_book
       @book = Book.find(params[:book_id].to_i)
     end
+
 end

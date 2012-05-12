@@ -8,7 +8,8 @@
   <div class="control-group<%= " error" unless ! @chapter.errors[:content].any? %>">
     <%= f.label :content, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_area :content, :class => 'tinymce', :rows => 40, :cols => 120 %>
+      <%= f.text_area :content, :rows => 10, :cols => 140 %>
+      <p class="help-block">You can user the awesome Markdown-Syntax here!</p>
     </div>
   </div>
 
@@ -18,5 +19,3 @@
                 book_path(@chapter.book), :class => 'btn' %>
   </div>
 <% end %>
-<%= tinymce_assets %>
-<%= tinymce %>

@@ -31,5 +31,5 @@ end
 
 gem 'jquery-rails'
 
-gem 'tinymce-rails'
+gem 'redcarpet'
 
