@@ -1,6 +1,6 @@
 class Book < ActiveRecord::Base
   attr_accessible :title, :subtitle
-  has_many :chapters
+  has_many :chapters, :order => 'created_at DESC'
   belongs_to :user
   
   validates :title, :presence => :true
