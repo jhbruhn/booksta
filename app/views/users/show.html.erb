@@ -1,7 +1,7 @@
 <div class="page-header">
 	<% if (current_user == @user) %>
 	<div class="pull-right">
-		<%= link_to "Edit", edit_user_path(@user) %>
+		<%= link_to "Edit", edit_user_path(@user), :class => "btn" %>
 
 	</div>
 	<% end %>
