@@ -3,7 +3,8 @@ class Chapter < ActiveRecord::Base
   
   belongs_to :book
     
-  validates :content, :length => {:minimum => 10}
+  validates :content, :length => {:minimum => 10}, :presence => :true
+  validates :title, :presence => :true
   
   def to_param
     "#{id}-#{title.downcase}".gsub(/[^a-zA-Z0-9]+/, '-').gsub(/-{2,}/, '-').gsub(/^-|-$/, '')
