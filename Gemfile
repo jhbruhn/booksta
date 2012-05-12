@@ -6,6 +6,10 @@ group :production, :staging do
   gem "pg"
 end
 
+group :production do
+  gem 'rack-google_analytics', :require => "rack/google_analytics"
+end
+
 group :development, :test do
   gem "sqlite3"
 end
