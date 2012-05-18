@@ -14,7 +14,7 @@
 		<%= best_in_place_if current_user == @book.user, @book, :title %>
 		<small>
 			<em>
-				 von <strong><%= link_to @book.user, @book.user %></strong>
+				 by <strong><%= link_to @book.user, @book.user %></strong>
 			</em>
 		</small>
 	</h1>
