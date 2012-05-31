@@ -2,7 +2,7 @@
 
 <div class="page-header">
 	<div class="pull-right">
-		<%= link_to "Download PDF-Version", book_path(@book, :format => :pdf), :class => 'btn ' %>
+<!--		<%= link_to "Download PDF-Version", book_path(@book, :format => :pdf), :class => 'btn ' %> -->
 		<% if current_user == @book.user %>
 			<%= link_to "Add new Chapter", new_book_chapter_path(@book), :class=>"btn btn-primary" %>
 			
