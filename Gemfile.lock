@@ -15,7 +15,6 @@ GEM
       rack-cache (~> 1.1)
       rack-test (~> 0.6.1)
       sprockets (~> 2.1.2)
-    active_link_to (1.0.0)
     activemodel (3.2.2)
       activesupport (= 3.2.2)
       builder (~> 3.0.0)
@@ -152,7 +151,6 @@ PLATFORMS
 
 DEPENDENCIES
   Ascii85
-  active_link_to
   best_in_place
   coffee-rails (~> 3.2.1)
   devise
