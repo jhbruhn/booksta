@@ -12,7 +12,16 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
 //= require jquery.purr
 //= require best_in_place
+//= require twitter/bootstrap
 //= require_tree .
+
+var at = $("#account_thing");
+var ati = $("#account_thing_icon");
+at.mouseover(function() {
+	ati.addClass("icon-white");
+});
+at.mouseleave(function() {
+	ati.removeClass("icon-white");
+});

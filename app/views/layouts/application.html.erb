@@ -10,7 +10,6 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
   <![endif]-->
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -23,20 +22,26 @@
           			<span class="icon-bar"></span>
           			<span class="icon-bar"></span>
         		</a>
-        		<a class="brand" href="/">booksta</a>
+				<strong>
+        			<a class="brand" href="/">booksta</a>
+				</strong>
         		<div class="nav-collapse">
           			<ul class="nav">
-	        			<li><%= link_to "Home" , "/"%></li>
-            			<li><%= link_to "All Books", books_path %></li>
-            			<li><%= link_to "New Book", new_book_path unless !user_signed_in? %></li>
+	        			<li <%= active?("/") %> ><%= link_to "Home" , "/" %></li>
+            			<li <%= active?(books_path) %>><%= link_to "All Books", books_path %></li>
+            			<li <%= active?(new_book_path) %>><%= link_to "New Book", new_book_path unless !user_signed_in? %></li>
 					</ul>
 					<ul class="nav pull-right">
-						<li class="dropdown">
+						<li class="dropdown" %>
 							<a href="#"
 						       class="dropdown-toggle"
-						       data-toggle="dropdown">
-								<i class="icon-user icon-white"></i>
-						          Account
+						       data-toggle="dropdown" id="account_thing">
+								<i class="icon-user" id="account_thing_icon"></i>
+						          <% if user_signed_in? %>
+								  	<%= current_user.username %>
+								  <%else %>
+								  	Account
+								  <%end%>
 						          <b class="caret"></b>
 						    </a>
 						    <ul class="dropdown-menu pull-right">
@@ -45,7 +50,7 @@
 									<li class="divider"></li>
 									<li><%= link_to "Sign up", new_user_registration_path %></li>
 								<% else %>
-									<li><%= link_to current_user.username, current_user %></li>
+									<li><%= link_to "Profile", current_user %></li>
 									<li class="divider"></li>
 									<li><%= link_to "New Book", new_book_path %>
 									</li>
@@ -59,14 +64,12 @@
     	</div>
 	</div>
 	<div class="container">
-  
 		<% if notice %>
-		<p class="alert alert-success"><%= notice %><a class="close" href="#" data-dismiss="alert">&times;</a></p>
+			<p class="alert alert-success"><%= notice %><a class="close" href="#" data-dismiss="alert">&times;</a></p>
 		<%end%>
 		<% if alert %>
- 		<p class="alert alert-error"><%= alert %><a class="close" href="#" data-dismiss="alert">&times;</a></p>
+	 		<p class="alert alert-error"><%= alert %><a class="close" href="#" data-dismiss="alert">&times;</a></p>
 		<%end%>
-		
 		<div class="content">
 			<%= yield %>
 		</div>
@@ -82,8 +85,10 @@
 				<%= link_to "What's this?", pages_wthit_path %>&nbsp;|&nbsp;<%= link_to "Who made this?", pages_who_path %>
 			</p>
 		</footer>
-		
 		<%= debug(params) if Rails.env.development? %>
 	</div>
+	
+    <%= javascript_include_tag "application" %>
+	
 </body>
 </html>

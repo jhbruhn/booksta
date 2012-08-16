@@ -1,38 +1,29 @@
-
 @import "twitter/bootstrap/bootstrap";
+@import "twitter/bootstrap/responsive";
 
 
+// Navbar
+@navbarBackground: #6285C7;
+@navbarBackgroundHighlight: lighten(@navbarBackground, 10%);
+@navbarLinkBackgroundHover: lighten(@navbarBackground, 5%);
+@navbarBrandColor: lighten(@navbarLinkColor, 10%);
+@navbarLinkColor: lighten(#9CC7F2, 10%);
+@navbarLinkColorHover: @navbarLinkColor;
+@navbarLinkColorActive: lighten(@navbarLinkColor, 10%);
+
+// Hero-Unit
+@heroUnitBackground: lighten(#D0E8F4, 5%);
+
+// Typography
+@linkColor: #6285C7;
+@baseFontSize: 14px;
 
 body { padding-top: 60px; }
-// Your custom LESS stylesheets goes here
-//
-// Since bootstrap was imported above you have access to its mixins which
-// you may use and inherit here
-//
-// If you'd like to override bootstrap's own variables, you can do so here as well
-// See http://twitter.github.com/bootstrap/less.html for their names and documentation
-//
-// Example:
-// @linkColor: #ff0000;
 
 .container > footer p {
 	text-align: center; /* center align it with the container */
 }
-
-
-@import "twitter/bootstrap/responsive";
-
 // Set the correct sprite paths
 @iconSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings.png');
 @iconWhiteSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings-white.png');
-
-// Set the Font Awesome (Font Awesome is default. You can disable by commenting below lines)
-@fontAwesomeEotPath: asset-path('fontawesome-webfont.eot');
-@fontAwesomeWoffPath: asset-path('fontawesome-webfont.woff');
-@fontAwesomeTtfPath: asset-path('fontawesome-webfont.ttf');
-@fontAwesomeSvgzPath: asset-path('fontawesome-webfont.svgz');
-@fontAwesomeSvgPath: asset-path('fontawesome-webfont.svg');
-
-// Font Awesome
-@import "fontawesome";
 

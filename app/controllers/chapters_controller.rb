@@ -37,7 +37,7 @@ class ChaptersController < ApplicationController
      respond_to do |format|
        if @book.user == current_user
           if @chapter.save
-            format.html { redirect_to [@book, @chapter], :notice => 'Chapter was successfully created.' }
+            format.html { redirect_to [@book, @chapter], :notice => 'Chapter was successfully added.' }
             format.json { render :json => [@book, @chapter], :status => :created, :location => [@book, @chapter] }
           else
             format.html { render :action => "new" }
@@ -58,7 +58,7 @@ class ChaptersController < ApplicationController
     respond_to do |format|
       if @book.user == current_user
         if @chapter.update_attributes(params[:chapter])
-          format.html { redirect_to [@book, @chapter], :notice => 'Chapter was successfully updated.' }
+          format.html { redirect_to [@book, @chapter], :notice => 'Chapter was successfully edited.' }
           format.json { head :no_content }
         else
           format.html { render :action => "edit" }

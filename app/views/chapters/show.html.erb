@@ -2,9 +2,14 @@
 <div class="page-header">
 	<% if current_user == @book.user %>
 		<div class="pull-right">
-			<%= link_to "Edit", edit_book_chapter_path(@book), :class => 'btn' %>
-			<%= link_to "Destroy", book_chapter_path([@book]), :method => 'delete', :confirm => "Do you really want to delete this chapter?",
-			              :class => 'btn btn-danger' %>
+			<%= link_to edit_book_chapter_path(@book), :class => 'btn' do %>
+				<i class="icon-edit"></i>
+				Edit
+			<% end %>
+			<%= link_to book_chapter_path([@book]), :method => 'delete', :confirm => "Do you really want to delete this chapter?", :class => 'btn btn-danger' do %>
+				<i class="icon-trash"></i>
+				Delete
+			<% end %>	 
 		</div>
 	<% end %>
 	<h1>
