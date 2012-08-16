@@ -27,7 +27,7 @@
 				</strong>
         		<div class="nav-collapse">
           			<ul class="nav">
-	        			<li <%= active?("/") %> ><%= link_to "Home" , "/" %></li>
+	        			<li <%= active?("/") %>><%= link_to "Home" , "/" %></li>
             			<li <%= active?(books_path) %>><%= link_to "All Books", books_path %></li>
             			<li <%= active?(new_book_path) %>><%= link_to "New Book", new_book_path unless !user_signed_in? %></li>
 					</ul>

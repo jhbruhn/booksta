@@ -5,7 +5,7 @@ module ApplicationHelper
 	end
   
   def active?(page_name, add = "")
-      "class='active #{add}'" if current_page?(page_name)
+      raw "class=\"active #{add} \"" if current_page?(page_name)
   end
 
 	def html_safe(text)
