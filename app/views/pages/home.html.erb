@@ -1,9 +1,21 @@
-<div class="hero-unit">
-	<h1>booksta</h1>
-	<p>
-		Release your own written stories, novels etc. into the wild!
-	</p>
+<div class="row">
+	<div class="span12">
+		<div class="hero-unit">
+			<h1>booksta</h1>
+			<p>
+				Release your own written stories, novels etc. into the wild!
+			</p>
+			<% if !user_signed_in? %>
+			<div class="pull-right">			
+					<%= link_to "Login", new_user_session_path , :class=>"btn btn-primary btn-large" %>			
+					<%= link_to "Register", new_user_registration_path, :class=>"btn btn-primary btn-large" %>
+			</div>
+			<% end %>
+		</div>
+	</div>
+
 </div>
+
 <div class="row">
 	<div class="span6">
 		<h2>The newest Books:</h2>
