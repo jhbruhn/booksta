@@ -1,12 +1,13 @@
 class ChaptersController < ApplicationController
   before_filter :find_book
   before_filter :authenticate_user!, :except => [:index, :show]
-  
+  require 'whatlanguage'
   # GET /chapters/1
   # GET /chapters/1.json
   def show
+    
     @chapter = Chapter.find(params[:id])
-
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @chapter }

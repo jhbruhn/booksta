@@ -1,11 +1,13 @@
 class BooksController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :show]
   
+  
+  
   # GET /books
   # GET /books.json
   def index
     @books = Book.all
-
+   
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @books }
@@ -17,16 +19,14 @@ class BooksController < ApplicationController
   def show
     @book = Book.find(params[:id])
     @chapters = @book.chapters
-    
+     wl = WhatLanguage.new(:all)
+    @lang = "karl"
+    @book.chapters.each do
+      @lang = wl.language(@book.chapters[0].content).to_s.capitalize
+    end
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render :json => @book }
-      format.pdf do
-        pdf = BookPdf.new(@book, view_context)
-        send_data pdf.render, :filename => "book_#{@book.title}.pdf",
-                              :type => "application/pdf",
-                              :disposition => "inline"
-      end
+      format.json { render :json => @book.to_json(:include => :chapters) }
     end
   end
 

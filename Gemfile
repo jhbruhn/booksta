@@ -25,8 +25,6 @@ gem 'json'
 gem 'devise'
 # le user avatars
 gem 'gravtastic'
-# le pdf generator
-gem 'prawn'
 # le htmlentity converter
 gem 'htmlentities'
 # le in_place editor
@@ -35,6 +33,8 @@ gem 'best_in_place'
 gem 'redcarpet'
 # jquery is cool
 gem 'jquery-rails'
+# le text-languagedetection
+gem 'whatlanguage'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
