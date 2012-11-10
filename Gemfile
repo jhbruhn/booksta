@@ -36,7 +36,7 @@ gem 'jquery-rails'
 # le text-languagedetection
 gem 'whatlanguage'
 # le javascript thingie
-gem 'turbolinks'
+# gem 'turbolinks'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
