@@ -44,6 +44,7 @@ group :assets do
   gem 'libv8', '~> 3.11.8'
   # js because of less
   gem 'therubyracer'
+  gem 'less'
   # let's make it ugly!
   gem 'uglifier', '>= 1.0.3'
   gem 'twitter-bootstrap-rails'
