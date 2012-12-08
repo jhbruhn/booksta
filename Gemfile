@@ -37,6 +37,7 @@ gem 'jquery-rails'
 gem 'whatlanguage'
 # le javascript thingie
 # gem 'turbolinks'
+gem 'less-rails'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -44,7 +45,6 @@ group :assets do
   gem 'libv8', '~> 3.11.8'
   # js because of less
   gem 'therubyracer'
-  gem 'less'
   # let's make it ugly!
   gem 'uglifier', '>= 1.0.3'
   gem 'twitter-bootstrap-rails'
