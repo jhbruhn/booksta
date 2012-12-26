@@ -24,12 +24,14 @@
 				<p><%= markdown (@user.about) unless @user.about == nil %></p>
 			</div>
 			<div class="span12">
+				<% unless @books.empty? %>
 				<h2>Books:</h2>
 				<ul>
 					<% @books.each do |book| %>
 						<li><h3><%= link_to book.title, book %></h3></li>
 					<% end %>
 				</ul>
+				<% end %>
 			</div>
 		</div>
 	</div>

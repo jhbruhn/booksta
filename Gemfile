@@ -14,6 +14,7 @@ end
 
 group :development, :test do
   gem "sqlite3"
+  gem "rails-erd"
 end
 
 # le server
@@ -42,7 +43,7 @@ gem 'less-rails'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-  gem 'libv8', '~> 3.11.8'
+  #gem 'libv8', '~> 3.11.8'
   # js because of less
   gem 'therubyracer'
   # let's make it ugly!

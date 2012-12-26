@@ -5,9 +5,9 @@ class ChaptersController < ApplicationController
   # GET /chapters/1
   # GET /chapters/1.json
   def show
-    
     @chapter = Chapter.find(params[:id])
-    
+    @book = @chapter.book
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @chapter }

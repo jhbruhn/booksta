@@ -19,8 +19,8 @@ class BooksController < ApplicationController
   def show
     @book = Book.find(params[:id])
     @chapters = @book.chapters
-     wl = WhatLanguage.new(:all)
-    @lang = "karl"
+    wl = WhatLanguage.new(:all)
+    @lang = ""
     @book.chapters.each do
       @lang = wl.language(@book.chapters[0].content).to_s.capitalize
     end

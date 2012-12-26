@@ -10,4 +10,14 @@ class Chapter < ActiveRecord::Base
     "#{id}-#{title.downcase}".gsub(/[^a-zA-Z0-9]+/, '-').gsub(/-{2,}/, '-').gsub(/^-|-$/, '')
   end
 
+  def next
+  	print id
+    book.chapters.where("id > ?", id).first
+  end
+
+  def prev
+    book.chapters.where("id < ?", id).first
+  end
+
+
 end

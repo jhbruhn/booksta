@@ -35,6 +35,7 @@ GEM
       jquery-rails
       rails (~> 3.1)
     builder (3.0.4)
+    choice (0.1.6)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -67,7 +68,6 @@ GEM
     less-rails (2.2.3)
       actionpack (>= 3.1)
       less (~> 2.2.0)
-    libv8 (3.11.8.4)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -94,6 +94,11 @@ GEM
       activesupport (= 3.2.9)
       bundler (~> 1.0)
       railties (= 3.2.9)
+    rails-erd (1.0.0)
+      activerecord (>= 3.0)
+      activesupport (>= 3.0)
+      choice (~> 0.1.6)
+      ruby-graphviz (~> 1.0.4)
     railties (3.2.9)
       actionpack (= 3.2.9)
       activesupport (= 3.2.9)
@@ -106,6 +111,7 @@ GEM
       json (~> 1.4)
     redcarpet (2.2.2)
     ref (1.0.2)
+    ruby-graphviz (1.0.8)
     sass (3.2.3)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
@@ -153,10 +159,10 @@ DEPENDENCIES
   jquery-rails
   json
   less-rails
-  libv8 (~> 3.11.8)
   pg
   rack-google_analytics
   rails (= 3.2.9)
+  rails-erd
   redcarpet
   sass-rails (~> 3.2.3)
   sqlite3
