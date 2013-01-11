@@ -2,49 +2,32 @@ class BootStrapFormBuilder < ActionView::Helpers::FormBuilder
 
   def text_field(method, options={})
     t = @template
-    t.content_tag(:div, :class => "control-group#{' error' unless @object.errors[method].blank?}") {
-      t.concat(t.label  field_id_for (method.to_s), method, :class=>"control-label")
-      t.concat(t.content_tag(:div, :class => "controls") {
-        t.concat(super method, :class => "text-field")
-        if @object.errors[method].present?
-          t.concat(t.content_tag(:span, options[:help_text], :class => 'help-inline'))
-        end
-      })
-    }
+    build_form_input(t, "text-field", super method, options)
+    
   end
   
   def text_area(method, options={})
     t = @template
-    t.content_tag(:div, :class => "control-group#{' error' unless @object.errors[method].blank?}") {
-      t.concat(t.label  field_id_for (method), method, :class=>"control-label")
-      t.concat(t.content_tag(:div, :class => "controls") {
-        t.concat(super method, options)
-        if @object.errors[method].present?
-          t.concat(t.content_tag(:span, options[:help_text], :class => 'help-inline'))
-        end
-      })
-    }
+    build_form_input(t, "", super method, options)
+    
   end
   
   def email_field(method, options={})
     t = @template
-    t.content_tag(:div, :class => "control-group#{' error' unless @object.errors[method].blank?}") {
-      t.concat(t.label  field_id_for (method), method, :class=>"control-label")
-      t.concat(t.content_tag(:div, :class => "controls") {
-        t.concat(super method, :class => "email-field")
-        if @object.errors[method].present?
-          t.concat(t.content_tag(:span, options[:help_text], :class => 'help-inline'))
-        end
-      })
-    }
+    build_form_input(t, "email-field", super method, options)
+    
   end
   
   def password_field(method, options={})
     t = @template
+    build_form_input(t, "password-field", super method, options)
+  end
+  
+  def build_form_input(t, class, super_method, options={})
     t.content_tag(:div, :class => "control-group#{' error' unless @object.errors[method].blank?}") {
       t.concat(t.label  field_id_for (method), method, :class=>"control-label")
       t.concat(t.content_tag(:div, :class => "controls") {
-        t.concat(super method, :class => "password-field")
+        t.concat(super_method, :class => class)
         if @object.errors[method].present?
           t.concat(t.content_tag(:span, options[:help_text], :class => 'help-inline'))
         end

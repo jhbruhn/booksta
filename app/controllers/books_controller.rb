@@ -7,11 +7,12 @@ class BooksController < ApplicationController
   # GET /books.json
   def index
     @books = Book.all
-   
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render :json => @books }
-    end
+    do_response @books
+    #
+    #respond_to do |format|
+     # format.html # index.html.erb
+      #format.json { render :json => @books }
+      #end
   end
 
   # GET /books/1
@@ -24,10 +25,8 @@ class BooksController < ApplicationController
     @book.chapters.each do
       @lang = wl.language(@book.chapters[0].content).to_s.capitalize
     end
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render :json => @book.to_json(:include => :chapters) }
-    end
+
+    do_response @book.to_json(:include => :chapters)
   end
 
   # GET /books/new
@@ -35,10 +34,7 @@ class BooksController < ApplicationController
   def new
     @book = Book.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render :json => @book }
-    end
+    do_response @book
   end
 
   # GET /books/1/edit
@@ -70,17 +66,29 @@ class BooksController < ApplicationController
     respond_to do |format|
       if @book.user == current_user
         if @book.update_attributes(params[:book])
-          format.html { redirect_to @book, :notice => 'Book was successfully edited.' }
-          format.json { head :no_content }
+          successful_update_response @book
         else
-          format.html { render :action => "edit" }
-          format.json { render :json => @book.errors, :status => :unprocessable_entity }
+          failed_update_response @book
         end
       else
-        format.html { render :action => "edit" , :alert => "U HAVE NO RIGHTS!" }
-        format.json { render :json => @chapter, :status => :unprocessable_entity }
+        no_right_response @chapter
       end
     end
+  end
+  
+  def successful_update_response(model)
+    format.html { redirect_to model, :notice => 'Book was successfully edited.' }
+    format.json { head :no_content }
+  end
+  
+  def failed_update_response(model)
+    format.html { render :action => "edit" }
+    format.json { render :json => model.errors, :status => :unprocessable_entity }
+  end
+  
+  def no_right_update_response(model)
+    format.html { render :action => "edit" , :alert => "U HAVE NO RIGHTS!" }
+    format.json { render :json => model, :status => :unprocessable_entity }
   end
 
   # DELETE /books/1

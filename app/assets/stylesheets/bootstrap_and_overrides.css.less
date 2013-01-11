@@ -1,29 +1,32 @@
 @import "twitter/bootstrap/bootstrap";
 @import "twitter/bootstrap/responsive";
 
+@fontAwesomeEotPath:  		'fontawesome-webfont.eot';
+@fontAwesomeEotPath_iefix:  'fontawesome-webfont.eot';
+@fontAwesomeWoffPath: 		'fontawesome-webfont.woff';
+@fontAwesomeTtfPath:  		'fontawesome-webfont.ttf';
+@fontAwesomeSvgzPath: 		'fontawesome-webfont.svgz';
+@fontAwesomeSvgPath:  		'fontawesome-webfont.svg';
+@import "fontawesome";
 
 // Navbar
 @navbarBackground: #6285C7;
 @navbarBackgroundHighlight: lighten(@navbarBackground, 10%);
 @navbarLinkBackgroundHover: lighten(@navbarBackground, 5%);
-@navbarBrandColor: lighten(@navbarLinkColor, 10%);
-@navbarLinkColor: lighten(#9CC7F2, 10%);
-@navbarLinkColorHover: @navbarLinkColor;
-@navbarLinkColorActive: lighten(@navbarLinkColor, 10%);
+@navbarBrandColor: 			lighten(@navbarLinkColor, 10%);
+@navbarLinkColor: 			lighten(#9CC7F2, 10%);
+@navbarLinkColorHover: 		lighten(@navbarLinkColor, 5%);
+@navbarLinkColorActive: 	lighten(@navbarLinkColor, 10%);
 
 // Hero-Unit
-@heroUnitBackground: lighten(#D0E8F4, 5%);
+@heroUnitBackground: 		lighten(#D0E8F4, 5%);
 
 // Typography
-@linkColor: #6285C7;
-@baseFontSize: 14px;
+@linkColor: 				#6285C7;
+@baseFontSize: 				14px;
 
 body { padding-top: 60px; }
 
 .container > footer p {
 	text-align: center; /* center align it with the container */
 }
-// Set the correct sprite paths
-@iconSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings.png');
-@iconWhiteSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings-white.png');
-

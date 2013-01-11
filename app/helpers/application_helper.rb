@@ -14,4 +14,5 @@ module ApplicationHelper
        return text.html_safe! if text.respond_to?(:html_safe!)
        text
 	end
+  
 end
