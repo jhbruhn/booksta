@@ -2,25 +2,29 @@ class BootStrapFormBuilder < ActionView::Helpers::FormBuilder
 
   def text_field(method, options={})
     t = @template
-    build_form_input(t, "text-field", super method, options)
+    super_method = super method
+    build_form_input(t, "text-field", super_method, options)
     
   end
   
   def text_area(method, options={})
     t = @template
-    build_form_input(t, "", super method, options)
+    super_method = super method
+    build_form_input(t, "", super_method, options)
     
   end
   
   def email_field(method, options={})
     t = @template
-    build_form_input(t, "email-field", super method, options)
+    super_method = super method
+    build_form_input(t, "email-field", super_method, options)
     
   end
   
   def password_field(method, options={})
     t = @template
-    build_form_input(t, "password-field", super method, options)
+    super_method = super method
+    build_form_input(t, "password-field", super_method, options)
   end
   
   def build_form_input(t, class, super_method, options={})
