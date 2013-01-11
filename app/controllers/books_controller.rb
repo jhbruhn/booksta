@@ -52,8 +52,7 @@ class BooksController < ApplicationController
         format.html { redirect_to @book, :notice => 'Book was successfully created.' }
         format.json { render :json => @book, :status => :created, :location => @book }
       else
-        format.html { render :action => "new" }
-        format.json { render :json => @book.errors, :status => :unprocessable_entity }
+        render_error_response("", "new", @book)
       end
     end
   end

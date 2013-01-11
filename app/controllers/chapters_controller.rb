@@ -38,12 +38,10 @@ class ChaptersController < ApplicationController
             format.html { redirect_to [@book, @chapter], :notice => 'Chapter was successfully added.' }
             format.json { render :json => [@book, @chapter], :status => :created, :location => [@book, @chapter] }
           else
-            format.html { render :action => "new" }
-            format.json { render :json => @chapter.errors, :status => :unprocessable_entity }
+            render_error_response("", "new", @chapter)
           end
        else
-         format.html { render :action => "new" , :alert => "U HAVE NO RIGHTS!" }
-         format.json { render :json => @book, :status => :unprocessable_entity }
+         render_error_response("U HAVE NO RIGHTS", "new", @chapter)
        end
      end
   end

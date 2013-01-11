@@ -17,8 +17,8 @@ class UsersController < ApplicationController
         format.html { redirect_to @user, :notice => 'Enjoy your changed Profile!' }
         format.json { head :no_content }
       else
-        format.html { render :action => "edit" }
-        format.json { render :json => @user.errors, :status => :unprocessable_entity }
+        render_error_response("", "edit", user)
+        
       end
     end
   end

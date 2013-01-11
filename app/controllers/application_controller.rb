@@ -8,4 +8,8 @@ class ApplicationController < ActionController::Base
     end
   end
   
+  def render_error_response(alert, action, model)
+    format.html { render :action => action, :alert => alert}
+    format.json { render :json => model.errors, :status => :unprocessable_entity }
+  end
 end
