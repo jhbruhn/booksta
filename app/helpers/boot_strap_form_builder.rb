@@ -27,11 +27,11 @@ class BootStrapFormBuilder < ActionView::Helpers::FormBuilder
     build_form_input(t, "password-field", super_method, options)
   end
   
-  def build_form_input(t, class, super_method, options={})
+  def build_form_input(t, css_class, super_method, options={})
     t.content_tag(:div, :class => "control-group#{' error' unless @object.errors[method].blank?}") {
       t.concat(t.label  field_id_for (method), method, :class=>"control-label")
       t.concat(t.content_tag(:div, :class => "controls") {
-        t.concat(super_method, :class => class)
+        t.concat(super_method, :class => css_class)
         if @object.errors[method].present?
           t.concat(t.content_tag(:span, options[:help_text], :class => 'help-inline'))
         end
