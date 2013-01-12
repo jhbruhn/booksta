@@ -7,7 +7,7 @@ class BootStrapFormBuilder < ActionView::Helpers::FormBuilder
     
   end
   
-  def label(method)
+  def label(method, options={})
     super method
   end
   

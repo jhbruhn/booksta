@@ -1,12 +1,12 @@
 <%= form_for [@book,@chapter], :html => { :class => 'form-horizontal' } do |f| %>
   <div class="control-group<%= " error" unless ! @chapter.errors[:title].any? %>">
-    <%= f.label t('chapter.title'), :class => 'control-label' %>
+    <%= f.label :title, t('chapter.title'), :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :title, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group<%= " error" unless ! @chapter.errors[:content].any? %>">
-    <%= f.label t('chapter.content'), :class => 'control-label' %>
+    <%= f.label :content, t('chapter.content'), :class => 'control-label' %>
     <div class="controls">
       <%= f.text_area :content, :rows => 10, :cols => 140 %>
       <p class="help-block"><%= t 'markdown_advice'%></p>

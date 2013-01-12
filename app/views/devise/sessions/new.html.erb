@@ -2,17 +2,19 @@
 
 <h1>Sign in</h1>
 </div>
+<%logger.info resource_name%>
+<%logger.info session_path(resource_name)%>
 <%= debug session_path resource_name %>
-<%= form_for  resource, :as => resource_name, :url => session_path(resource_name), :html => { :class => 'form-horizontal' } do |f| %>
-	<div class="control-group">
-  		<%= f.label t('user.name'), :class=>"control-label" %>
+<%= form_for resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-horizontal'} do |f| %>
+	<div class="control-group">		
+  		<%= f.label :username, t('user.name'), :class => 'control-label'%>
  		<div class="controls">
   			<%= f.text_field :username, :class => 'text_field' %>
 		</div>
 	</div>
 	
   	<div class="control-group">
-		<%= f.label t('user.password'), :class=>"control-label" %>
+  		<%= f.label :password, t('user.password'), :class => 'control-label'%>
 		<div class="controls">
   			<%= f.password_field :password, :class => 'password_field' %>
 		</div>

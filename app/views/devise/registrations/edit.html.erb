@@ -3,22 +3,22 @@
 </div>
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => 'form-horizontal'}) do |f| %>
   <div class="control-group">
-	  <%= f.label t('user.about'), :class => 'control-label' %>
+	  <%= f.label :about, t('user.about'), :class => 'control-label' %>
   <div class="controls">
     <%= f.text_area :about, :rows => 7, :cols => 120 %>
     <p class="help-block"><%= t('markdown_advice') %></p>
   </div>
 </div>
-  <div class="control-group"><%= f.label t('user.email'), :class => 'control-label' %> <div class="controls">
+  <div class="control-group"><%= f.label :email, t('user.email'), :class => 'control-label' %> <div class="controls">
   <%= f.email_field :email %></div></div>
 
-  <div class="control-group"><%= f.label t('user.password'), :class => 'control-label' %> <i></i> <div class="controls">
+  <div class="control-group"><%= f.label :password, t('user.password'), :class => 'control-label' %> <i></i> <div class="controls">
 	  <%= f.password_field :password, :autocomplete => "off" %><p class="help-block"><%=t('user.password_help')%></p></div></div>
 
-  <div class="control-group"><%= f.label t('user.password_repeat'), :class => 'control-label' %> <div class="controls">
+  <div class="control-group"><%= f.label :password_confirmation, t('user.password_repeat'), :class => 'control-label' %> <div class="controls">
   <%= f.password_field :password_confirmation %></div></div>
 
-  <div class="control-group"><%= f.label t('user.current_password'), :class => 'control-label' %>  <div class="controls">
+  <div class="control-group"><%= f.label :current_password, t('user.current_password'), :class => 'control-label' %>  <div class="controls">
 	  <%= f.password_field :current_password %><p class="help-block"><%= t('user.password_repeat_help')%></p></div></div>
   <div class="form-actions">
 

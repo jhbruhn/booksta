@@ -6,28 +6,28 @@
 <%= form_for resource, :as => resource_name, :url => registration_path(resource_name), :html => { :class => 'form-horizontal' } do |f| %>
 
   	<div class="control-group">
-	  	<%= f.label(t('user.name'), :class => 'control-label') %>
+	  	<%= f.label(:username, t('user.name'), :class => 'control-label') %>
 	  	<div class="controls">
   			<%= f.text_field :username %>
 		</div>
 	</div>
 
   	<div class="control-group">
-		<%= f.label(t('user.email'), :class => 'control-label') %>
+		<%= f.label(:email, t('user.email'), :class => 'control-label') %>
 		<div class="controls">
   	  		<%= f.email_field :email %>
   		</div>
 	</div>
 
   	<div class="control-group">
-		<%= f.label(t('user.password') , :class => 'control-label') %>
+		<%= f.label(:password, t('user.password') , :class => 'control-label') %>
 		<div class="controls">
   	  		<%= f.password_field :password %>
   	  	</div>
 	</div>
 
   	<div class="control-group">
-		<%= f.label(t('user.password_repeat'), :class => 'control-label') %>
+		<%= f.label(:password_confirmation, t('user.password_repeat'), :class => 'control-label') %>
 		<div class="controls">
   	  		<%= f.password_field :password_confirmation %>
   	  	</div>
