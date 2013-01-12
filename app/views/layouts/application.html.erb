@@ -27,7 +27,7 @@
 				</strong>
         		<div class="nav-collapse">
           			<ul class="nav">
-	        			<li <%= active?("/") %>><%= link_to t('page.home') , "/" %></li>
+	        			<li <%= active?("/") %>><%= link_to t('page.home') , root_url %></li>
             			<li <%= active?(books_path) %>><%= link_to t('book.all'), books_path %></li>
             			<li <%= active?(new_book_path) %>><%= link_to t('book.new'), new_book_path unless !user_signed_in? %></li>
 					</ul>
