@@ -7,6 +7,10 @@ class BootStrapFormBuilder < ActionView::Helpers::FormBuilder
     
   end
   
+  def label(method)
+    super method
+  end
+  
   def text_area(method, options={})
     t = @template
     super_method = super method
