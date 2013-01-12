@@ -33,31 +33,31 @@ de-ZW:
     what:
       title: OGF - oft gestellte Fragen (Ich bin ja mäßig cool, dass ich das translated habe.)
       what_exactly:
-        text: 
-        title: 
+        text: Joa, das wüsstest du wohl gerne, ne?
+        title: Dafuq? Was isn das hier?
       why:
-        text: 
-        title: 
+        text: Ja.
+        title: ! 'Was ist der Sinn des Lebens, wenn es nicht 42 ist? Wieso fragen sich leute überhaupt diese Frage? Ist es vielleicht sogar der Sinn des Lebens sich nach dem Sinn des Lebens zu fragen? Ist das Leben dann eine einzige Rekursion? '
       why_imp:
-        text: 
-        title: 
+        text: 4,99€ am linken Schalter.
+        title: Wurst?
     who:
-      text: 
-      title: 
+      text: HeinzPeda alias Udolf aka. UlfKarlPeda
+      title: Welches krasse Genie hat das hier gemacht?
   user:
-    about: 
-    account: 
-    cancel_account: 
-    current_password: 
-    email: 
-    forgot_password_question: 
-    name: 
-    newest: 
-    password: 
-    password_help: 
-    password_repeat: 
-    password_repeat_help: 
-    profile: 
-    sign_in: 
-    sign_out: 
-    sign_up: 
+    about: Über
+    account: Konto
+    cancel_account: Das is mir hier zu krass. Lösch mal mein freshes Konto, alter.
+    current_password: Aktuelles, geheimes Wort, das nicht 123456 ist.
+    email: E-Mail
+    forgot_password_question: Hast du dein geheimes Wort, das nicht 123456 ist vergessen?
+    name: Benutzername
+    newest: Die freshesten Benutzer
+    password: geheimes Wort, das nicht 123456 enthält!1!!!
+    password_help: Lassen dieses unnötige Feld frei, wenn sie ihr Passwort ändern wollen. Ich frag mich hier auch grade warum. Da sind Sie nicht alleine. Andererseits bin ich ja nur der unbezahlte Übersetzer.
+    password_repeat: Passwortbestätigung, alter.
+    password_repeat_help: Wir brauchen so mäßig dein Passwort dafür
+    profile: Profil
+    sign_in: Log mich mal krass ein hier.
+    sign_out: Log mich mal hier aus. Ich muss hier raus!1!!1
+    sign_up: Registrierieiteren
