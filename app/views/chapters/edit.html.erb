@@ -1,4 +1,4 @@
 <div class="page-header">
-	<h1>Edit <%=@chapter.title%></h1>
+	<h1><%= t('chapter.edit', :title => @chapter.title) %></h1>
 </div>
 <%= render :partial => 'form' %>

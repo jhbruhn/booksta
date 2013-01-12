@@ -1,12 +1,12 @@
-<%- model_class = Book.new.class -%>
+	<%- model_class = Book.new.class -%>
 <div class="page-header">
-	<h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+	<h1><%=t 'book.name_pl' %></h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:title) %></th>
-      <th>Author</th>
+      <th><%= t 'book.title' %></th>
+      <th><%= t 'book.author' %></th>
     </tr>
   </thead>
   <tbody>

@@ -27,9 +27,9 @@
 				</strong>
         		<div class="nav-collapse">
           			<ul class="nav">
-	        			<li <%= active?("/") %>><%= link_to "Home" , "/" %></li>
-            			<li <%= active?(books_path) %>><%= link_to "All Books", books_path %></li>
-            			<li <%= active?(new_book_path) %>><%= link_to "New Book", new_book_path unless !user_signed_in? %></li>
+	        			<li <%= active?("/") %>><%= link_to t('page.home') , "/" %></li>
+            			<li <%= active?(books_path) %>><%= link_to t('book.all'), books_path %></li>
+            			<li <%= active?(new_book_path) %>><%= link_to t('book.new'), new_book_path unless !user_signed_in? %></li>
 					</ul>
 					<ul class="nav pull-right">
 						<li class="dropdown" %>
@@ -40,21 +40,21 @@
 						          <% if user_signed_in? %>
 								  	<%= current_user.username %>
 								  <%else %>
-								  	Account
+								  <%= t 'user.account' %>
 								  <%end%>
 						          <b class="caret"></b>
 						    </a>
 						    <ul class="dropdown-menu pull-right">
 								<% if !user_signed_in? %>
-									<li><%= link_to "Sign in", new_user_session_path %></li>
+									<li><%= link_to t('user.sign_in'), new_user_session_path %></li>
 									<li class="divider"></li>
-									<li><%= link_to "Sign up", new_user_registration_path %></li>
+									<li><%= link_to t('user.sign_up'), new_user_registration_path %></li>
 								<% else %>
-									<li><%= link_to "Profile", current_user %></li>
+									<li><%= link_to t('user.profile'), current_user %></li>
 									<li class="divider"></li>
-									<li><%= link_to "New Book", new_book_path %>
+									<li><%= link_to t('book.new'), new_book_path %>
 									</li>
-									<li><%= link_to "Log out", destroy_user_session_path, :method => :delete%></li>
+									<li><%= link_to t('user.sign_out'), destroy_user_session_path, :method => :delete%></li>
 								<% end %>
 						    </ul>
 						</li>
@@ -80,11 +80,11 @@
 			<br />
 			
 			<p>
-				Made by bigteddy, 2012
+				Made by bigteddy, 2012-2013
 			</p>
 
 			<p>
-				<%= link_to "What's this?", pages_wthit_path %>&nbsp;|&nbsp;<%= link_to "Who made this?", pages_who_path %>
+				<%= link_to t('page.what.title'), pages_wthit_path %>&nbsp;|&nbsp;<%= link_to t('page.who.title'), pages_who_path %>
 			</p>
 		</footer>
 		<%= debug(params) if Rails.env.development? %>

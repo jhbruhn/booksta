@@ -2,4 +2,67 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  chapter:
+    create: "Create Chapter"
+    remove: "Remove"
+    name: "Chapter"
+    name_pl: "Chapters"
+    title: "Title"
+    content: "Content"
+    edit: "Edit %{title}"
+    from: "from"
+    prev: "Previous Chapter"
+    next: "Next Chapter"
+  book:
+    written_by: "by"
+    all: "All Books"
+    remove: "Remove"
+    create: "Create Book"	
+    title: "Title"	
+    subtitle: "Subtitle"	
+    new: "New Book"	
+    edit: "Edit Book"	
+    name: "Book"	
+    name_pl: "Books"	
+    author: "Author"
+    newest: "The newest Books"
+  page:
+    home: "Home"
+    homepage:
+      text: "Release your own written stories, novels etc. into the wild!"
+    who:
+      title: "Who made this?"
+      text: "This site was made by the true and only bigteddy!"
+    what:
+      title: "FAQ"
+      what_exactly:
+          title: "What's this?"
+          text: "'this' is a page where you can release your own selfwritten storys. They can be a shortstory, a novel or whatever!"
+      why:
+       title: "Why should i do that?"
+       text: "Because you can share your own ideas with the whole world!"
+      why_imp:
+       title: "Why did you implement this?"
+       text: "Because I was quite bored one day"
+  user:
+    account: "Account"	
+    forgot_password_question: "Forgot your password?"	
+    newest: "The newest Users"	
+    name: "Username"	
+    profile: "Profile"	
+    sign_in: "Sign in"	
+    sign_up: "Sign up"	
+    sign_out: "Sign out"	
+    password: "Password"	
+    password_help: "leave blank if you don't want to change your password"	
+    password_repeat: "Password Confirmation"	
+    password_repeat_help: "we need your current password to confirm your changes"	
+    current_password: "Current Password"	
+    email: "E-Mail"	
+    about: "About"	
+    cancel_account: "Cancel my Account"	
+  language: "Language"
+  markdown_advice: "You can use the awesome Markdown-Syntax here!"
+  cancel: "Cancel"
+  
+    

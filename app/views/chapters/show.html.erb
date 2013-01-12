@@ -5,20 +5,20 @@
 		<div class="pull-right">
 			<%= link_to edit_book_chapter_path(@book), :class => 'btn' do %>
 				<i class="icon-edit"></i>
-				Edit
+				<%= t 'chapter.edit', :title => "Chapter" %>
 			<% end %>
 			<%= link_to book_chapter_path([@book]), :method => 'delete', :confirm => "Do you really want to delete this chapter?", :class => 'btn btn-danger' do %>
 				<i class="icon-trash"></i>
-				Delete
+				<%= t 'chapter.delete' %>
 			<% end %>	 
 		</div>
 	<% end %>
 	<h1>
 		<%= @chapter.title %> 
 		<small>
-			from <%= link_to @chapter.book.title, @chapter.book %>
+			<%= t 'chapter.from'%> <%= link_to @chapter.book.title, @chapter.book %>
 			<em>
-				 by <strong><%= link_to @chapter.book.user, @chapter.book.user %></strong>
+				 <%= t 'book.written_by'%> <strong><%= link_to @chapter.book.user, @chapter.book.user %></strong>
 			</em>
 		</small>
 		
@@ -32,7 +32,7 @@
   		
 	</div>
 	<div class="span3">
-		<h3>Chapters:</h3>
+		<h3><%= t 'chapter.name_pl' %>:</h3>
     	<ol>
         	<% @chapter.book.chapters.each do |chapter| %>
 	        	<li>
@@ -49,10 +49,10 @@
 	<div class="span12">
 		<div>
   			<span>
-  				<%= link_to "Previous Chapter: "+ @chapter.prev.title, [@book, @chapter.prev], :class => 'btn' unless @chapter.prev == nil %>
+  				<%= link_to t('chapter.prev')+": "+ @chapter.prev.title, [@book, @chapter.prev], :class => 'btn' unless @chapter.prev == nil %>
   			</span>
   			<span class="pull-right">
-  				<%= link_to "Next Chapter: "+ @chapter.next.title, [@book, @chapter.next], :class => 'btn' unless @chapter.next == nil %>
+  				<%= link_to t('chapter.next')+": "+ @chapter.next.title, [@book, @chapter.next], :class => 'btn' unless @chapter.next == nil %>
   			</span>
   		</div>
   	</div>

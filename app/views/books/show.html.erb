@@ -2,16 +2,15 @@
 
 <div class="page-header">
 	<div class="pull-right">
-<!--		<%= link_to "Download PDF-Version", book_path(@book, :format => :pdf), :class => 'btn ' %> -->
 		<% if current_user == @book.user %>
 			<%= link_to new_book_chapter_path(@book), :class=>"btn btn-primary" do %>
 				<i class='icon-plus-sign'></i>
-				Add new Chapter
+				<%= t 'chapter.create' %>
 			<% end %>
 			
 			<%= link_to book_path(@book), :method => 'delete', :confirm => "Do you really want to delete this book?", :class => 'btn btn-danger' do %>
 				<i class="icon-trash"></i>
-				Remove
+				<%= t 'book.remove' %>
 			<% end %>
 		<%end%>
 	</div>
@@ -19,7 +18,7 @@
 		<%= best_in_place_if current_user == @book.user, @book, :title %>
 		<small>
 			<em>
-				 by <strong><%= link_to @book.user, @book.user %></strong>
+				 <%= t 'book.written_by' %> <strong><%= link_to @book.user, @book.user %></strong>
 			</em>
 		</small>
 	</h1>
@@ -27,7 +26,7 @@
 </div>
 
 <% if @book.chapters.any? %>
-    <h3>Chapters:</h3>
+	<h3><%= t 'chapter.name_pl'%>:</h3>
     <ol>
         <% @book.chapters.each do |chapter| %>
 	        <li>
@@ -38,6 +37,6 @@
 <% end %>
 <% if !@lang.empty? %>
 <div class="pull-right">
-	<small>Language: <strong><%= @lang %></strong></small>
+	<small><%= t 'language' %>: <strong><%= @lang %></strong></small>
 </div> 
 <% end %>
