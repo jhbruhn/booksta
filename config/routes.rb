@@ -1,6 +1,6 @@
 Bookster::Application.routes.draw do
   
-  scope "(:locale)", :locale => /en|de/ do
+  scope "(:locale)", :locale => /en|de|de-ZW/ do
     get "pages/home"
 
     get "pages/wthit"

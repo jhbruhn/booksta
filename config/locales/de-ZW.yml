@@ -1,0 +1,63 @@
+de-ZW:
+  book:
+    all: Alle freshen Werke
+    author: Schöpfer
+    create: Altah ich will jetzt n Buch schreiben!1!1!
+    edit: Krasse scheiße, ich muss da was ändern!
+    name: Buch
+    name_pl: BüchazZ
+    new: Neues Werk schöpfen
+    newest: Die freshesten BüchazZ
+    remove: Mach das weg.
+    subtitle: Untertitöl
+    title: Titel
+    written_by: krass gemacht von
+  cancel: Altah abbrechen!1!!!
+  chapter:
+    content: Wurst
+    create: Neuen Abschnitt erstellen
+    edit: ! '%{title} muss ich grad mal editieren.'
+    from: ist ja so mäßig aus
+    name: Kapitel
+    name_pl: KapitelzZzZz
+    next: Nächstes Kapitel
+    prev: Vorheriges Kapitel
+    remove: Krass alter, das muss in den Müll!
+    title: Titel
+  language: Sprache
+  markdown_advice: ! 'Du kannst hier ja so mäßig die krasse Markdown-Syntax benutzen, was ja nicht krass unnais ist: Evil Shit, alter ich glaub das nicht. junge, is das krass...'
+  page:
+    home: Startseite
+    homepage:
+      text: Spamm die Leute mit RandomShit zu, der in der vorgeht. Jetzt nur bei bookster. Und wenn sie sofort anrufen bekommen sie Nils gratis dazu.
+    what:
+      title: OGF - oft gestellte Fragen (Ich bin ja mäßig cool, dass ich das translated habe.)
+      what_exactly:
+        text: 
+        title: 
+      why:
+        text: 
+        title: 
+      why_imp:
+        text: 
+        title: 
+    who:
+      text: 
+      title: 
+  user:
+    about: 
+    account: 
+    cancel_account: 
+    current_password: 
+    email: 
+    forgot_password_question: 
+    name: 
+    newest: 
+    password: 
+    password_help: 
+    password_repeat: 
+    password_repeat_help: 
+    profile: 
+    sign_in: 
+    sign_out: 
+    sign_up: 

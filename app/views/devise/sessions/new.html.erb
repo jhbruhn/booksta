@@ -4,21 +4,21 @@
 </div>
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :class => 'form-horizontal' }) do |f| %>
 	<div class="control-group">
-  		<%= f.label :username, :class=>"control-label" %>
+  		<%= f.label t('user.name'), :class=>"control-label" %>
  		<div class="controls">
   			<%= f.text_field :username, :class => 'text_field' %>
 		</div>
 	</div>
 	
   	<div class="control-group">
-		<%= f.label :password, :class=>"control-label" %>
+		<%= f.label t('user.password'), :class=>"control-label" %>
 		<div class="controls">
   			<%= f.password_field :password, :class => 'password_field' %>
 		</div>
 	</div>
 
   <div class="form-actions">
-	<%= f.submit "Sign in", :class => 'btn btn-primary' %>
+	<%= f.submit t('user.sign_in'), :class => 'btn btn-primary' %>
   </div>
 <% end %>
 
