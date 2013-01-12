@@ -1,0 +1,63 @@
+de:
+  book:
+    all: Alle Bücher
+    author: Autor
+    create: Buch erstellen
+    edit: Buch bearbeiten
+    name: Buch
+    name_pl: Bücher
+    new: Neues Buch
+    newest: Die neusten Bücher
+    remove: Entfernen
+    subtitle: Untertitel
+    title: Titel
+    written_by: von
+  cancel: Abbrechen
+  chapter:
+    content: Inhalt
+    create: Kapitel erstellen
+    edit: ! '%{title} bearbeiten'
+    from: aus
+    name: Kapitel
+    name_pl: Kapitel
+    next: Nächstes Kapitel
+    prev: Vorheriges Kapitel
+    remove: Entfernen
+    title: Titel
+  language: Sprache
+  markdown_advice: Du kannst hier die mega freshe Markdown-Syntax benutzen!
+  page:
+    home: Startseite
+    homepage:
+      text: Veröffentliche deine selbstgeschriebenen Geschichte, Romane etc!
+    what:
+      title: FAQ
+      what_exactly:
+        text: ! '''Das'' ist eine Seite, auf der du deine selbstgeschriebenen Geschichten veröffentlichen kannst. Das kann eine Kurzgeschichte, ein Roman oder was auch immer sein!'
+        title: Was ist das?
+      why:
+        text: Weil du deine eigenen Ideen mit der ganzen Welt teilen kannst!
+        title: Warum sollte ich das tun?
+      why_imp:
+        text: Weil ich an einem Tag mal ziemlich gelangweilt war
+        title: Warum hast du das hier gebastelt?
+    who:
+      text: Dieses Seite wurde von dem einzig wahren bigteddy gemacht!
+      title: Wer hat das hier gemacht?
+  user:
+    about: Über
+    account: Konto
+    cancel_account: Mein Konto löschen
+    current_password: Aktuelles Passwort
+    email: E-Mail
+    forgot_password_question: Hast Du dein Passwort vergessen?
+    name: Benutzername
+    newest: Die neusten Benutzer
+    password: Passwort
+    password_help: leer lassen, wenn du dein Passwort nicht ändern möchtest
+    password_repeat: Password-Bestätigung
+    password_repeat_help: Wir brauchen dein aktuelles Passwort, um die Änderungen zu bestätigen.
+    profile: Profil
+    sign_in: Einloggen
+    sign_out: Ausloggen
+    sign_up: Registrieren

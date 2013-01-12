@@ -23,7 +23,7 @@
           			<span class="icon-bar"></span>
         		</a>
 				<strong>
-        			<a class="brand" href="/">booksta</a>
+        			<%= link_to "booksta", root_url, :class => "brand"%>
 				</strong>
         		<div class="nav-collapse">
           			<ul class="nav">
@@ -78,14 +78,19 @@
 		<hr />
 		<footer>
 			<br />
-			
+
+			<p class="pull-left">
+				<%= link_to t('page.what.title'), pages_wthit_path %>&nbsp;|&nbsp;<%= link_to t('page.who.title'), pages_who_path %>
+			</p>
+			<p class="pull-right">
+			<%= link_to_unless I18n.locale == :en, "English", locale: :en %>
+			|
+			<%= link_to_unless I18n.locale == :de, "Deutsch", locale: :de %>
+			</p> 
 			<p>
 				Made by bigteddy, 2012-2013
 			</p>
-
-			<p>
-				<%= link_to t('page.what.title'), pages_wthit_path %>&nbsp;|&nbsp;<%= link_to t('page.who.title'), pages_who_path %>
-			</p>
+			<br/>
 		</footer>
 		<%= debug(params) if Rails.env.development? %>
 	</div>

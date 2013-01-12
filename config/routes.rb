@@ -1,22 +1,23 @@
 Bookster::Application.routes.draw do
- 
-  get "pages/home"
-
-  get "pages/wthit"
-
-  get "pages/who"
-
-  devise_for :users
- 
-  resources :users
-
-
-  resources :books do
-    resources :chapters
-  end
-
-  root :to => "pages#home"
   
+  scope "(:locale)", :locale => /en|de/ do
+    get "pages/home"
+
+    get "pages/wthit"
+
+    get "pages/who"
+
+    devise_for :users
+ 
+    resources :users
+
+
+    resources :books do
+      resources :chapters
+    end
+
+    root :to => "pages#home"
+  end
 
   
   # The priority is based upon order of creation:
