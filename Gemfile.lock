@@ -35,7 +35,6 @@ GEM
       jquery-rails
       rails (~> 3.1)
     builder (3.0.4)
-    choice (0.1.6)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -102,11 +101,6 @@ GEM
       activesupport (= 3.2.11)
       bundler (~> 1.0)
       railties (= 3.2.11)
-    rails-erd (1.0.0)
-      activerecord (>= 3.0)
-      activesupport (>= 3.0)
-      choice (~> 0.1.6)
-      ruby-graphviz (~> 1.0.4)
     railties (3.2.11)
       actionpack (= 3.2.11)
       activesupport (= 3.2.11)
@@ -121,7 +115,6 @@ GEM
     ref (1.0.2)
     rest-client (1.6.7)
       mime-types (>= 1.16)
-    ruby-graphviz (1.0.8)
     sass (3.2.5)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
@@ -175,7 +168,6 @@ DEPENDENCIES
   pg
   rack-google_analytics
   rails (= 3.2.11)
-  rails-erd
   redcarpet
   sass-rails (~> 3.2.3)
   sqlite3
